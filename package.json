@@ -1,0 +1,29 @@
+{
+  "name": "watchlist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup --config rollup.config.mjs",
+    "zip": "zip -j dist/watchlist.zip build/*",
+    "push": "",
+    "deploy": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericlo23/watchlist.git"
+  },
+  "author": "Eric Lo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ericlo23/watchlist/issues"
+  },
+  "homepage": "https://github.com/ericlo23/watchlist#readme",
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "axios": "^1.6.7",
+    "rollup": "^4.12.1",
+    "rollup-plugin-node-externals": "^7.0.1"
+  }
+}
