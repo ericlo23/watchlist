@@ -2,6 +2,7 @@ const { getCryptoPrices } = require("./getCryptoPrices");
 const { getTwStockPrices } = require("./getTwStockPrices");
 const { getUsStockPrices } = require("./getUsStockPrices");
 const { getUsdToTwd } = require("./getUsdToTwd");
+const { postPrices } = require("./postPrices");
 const { inspect } = require("util");
 const {
   CRYPTO_SYMBOLS,
@@ -19,14 +20,18 @@ async function getPrices() {
 }
 
 exports.handler = async (event) => {
-  const [cryptoPrices, twStockPrices, usStockPrices, twdPrice] =
+  const [cryptoPrices, twStockPrices, usStockPrices, usdPrice] =
     await getPrices();
 
   const price = {
     ...cryptoPrices,
     ...twStockPrices,
     ...usStockPrices,
-    TWD: twdPrice,
+    USD: usdPrice,
   };
   console.log(inspect(price, { depth: null }));
+
+  const res = await postPrices(price);
+  console.log(res);
 };
+
