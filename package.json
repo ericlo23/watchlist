@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "rollup --config rollup.config.mjs",
-    "zip": "zip -j dist/watchlist.zip build/*",
-    "push": "",
+    "zip": "sh scripts/zip.sh",
+    "push": "sh scripts/push.sh",
     "deploy": ""
   },
   "repository": {
