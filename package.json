@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rollup --config rollup.config.mjs",
-    "zip": "sh scripts/zip.sh",
-    "push": "sh scripts/push.sh",
-    "deploy": ""
+    "build": "rollup --config rollup.config.mjs && sh scripts/zip.sh",
+    "deploy": "cd terraform && terraform apply --auto-approve && cd -"
   },
   "repository": {
     "type": "git",
