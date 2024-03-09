@@ -1,5 +1,10 @@
+.DS_Store
 .vscode/
 node_modules/
 build/
 dist/
 src/constants.js
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform/
