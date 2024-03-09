@@ -1,5 +1,5 @@
 import commonjs from "@rollup/plugin-commonjs";
-import externals from "rollup-plugin-node-externals";
+import json from "@rollup/plugin-json";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 
 export default {
@@ -9,5 +9,5 @@ export default {
     format: "cjs",
     exports: "named",
   },
-  plugins: [externals(), nodeResolve(), commonjs()],
+  plugins: [json(), nodeResolve(), commonjs()],
 };

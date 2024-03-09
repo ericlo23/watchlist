@@ -21,6 +21,7 @@
   "homepage": "https://github.com/ericlo23/watchlist#readme",
   "dependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "axios": "^1.6.7",
     "rollup": "^4.12.1",
