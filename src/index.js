@@ -8,6 +8,8 @@ const {
   CRYPTO_SYMBOLS,
   TW_STOCK_SYMBOLS,
   US_STOCK_SYMBOLS,
+  DEVELOP_XPLATFORM_API_KEY,
+  ERICLO_XPLATFORM_API_KEY,
 } = require("./constants");
 
 async function getPrices() {
@@ -31,7 +33,9 @@ exports.handler = async (event) => {
   };
   console.log(inspect(price, { depth: null }));
 
-  const res = await postPrices(price);
+  const res = await Promise.all([
+    postPrices("develop", DEVELOP_XPLATFORM_API_KEY, price),
+    postPrices("ericlo", ERICLO_XPLATFORM_API_KEY, price),
+  ]);
   console.log(res);
 };
-

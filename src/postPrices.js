@@ -1,10 +1,9 @@
 const axios = require('axios');
-const { XPLATFORM_API_KEY } = require('./constants');
 
-async function postPrices(prices) {
-  const url = "https://api.xplatform.tranx.io/develop/watchlist"
+async function postPrices(env, apiKey, prices) {
+  const url = `https://api.xplatform.tranx.io/${env}/watchlist`
   const headers = {
-    "x-api-key": XPLATFORM_API_KEY,
+    "x-api-key": apiKey,
     "Content-Type": "application/json"
   }
   
